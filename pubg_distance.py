@@ -32,7 +32,7 @@ class PUBGDistanceTool:
         print("操作说明:")
         print("  Ctrl + Shift + C -> 校准当前地图")
         print("  T键              -> 标记点位(点两次)")
-        print("  Ctrl + 1~9       -> 切换地图")
+        print("  Ctrl + Shift + 1~9     -> 切换地图")
         print("  Ctrl + Q         -> 退出程序")
         print("=" * 50)
         self.print_map_status()
@@ -68,7 +68,7 @@ class PUBGDistanceTool:
         keyboard.add_hotkey('ctrl+shift+c', self.start_calibrate)
         keyboard.add_hotkey('t', self.on_t_press)
         for i in range(1, 10):
-            keyboard.add_hotkey(f'ctrl+{i}', lambda idx=i-1: self.switch_map(idx))
+            keyboard.add_hotkey(f'ctrl+shift+{i}', lambda idx=i-1: self.switch_map(idx))
     
     def get_cursor_pos(self):
         point = ctypes.wintypes.POINT()
